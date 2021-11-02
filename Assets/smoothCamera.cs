@@ -2,7 +2,7 @@
 
 using UnityEngine;
 
-public class smotthCamera : MonoBehaviour {
+public class smoothCamera : MonoBehaviour {
 
 	public Transform target;
     public Camera myCamera;
@@ -16,11 +16,6 @@ public class smotthCamera : MonoBehaviour {
 		Vector3 desiredPosition = target.position + offset;
 		Vector3 smoothedPosition = Vector3.Lerp(myCamera.transform.position, desiredPosition, smoothSpeed);
 		myCamera.transform.position = smoothedPosition;
-        //Debug.Log("Desired Camera POS = " + desiredPosition.ToString());
-        //Debug.Log("Capsule POS = " + target.position.ToString());
-        
-
-		
 	}
 
 }

@@ -7,10 +7,10 @@ public class movementController : MonoBehaviour
     private CharacterController controller;
     private Vector3 playerVelocity;
     private bool groundedPlayer;
-    private float playerSpeed = 2.0f;
-    private float playerRunSpeed = 4.0f;
-    private float jumpHeight = 1.0f;
-    private float gravityValue = -9.81f;
+    private float playerSpeed = .66f;
+    private float playerRunSpeed = 1.33f;
+    private float jumpHeight = .33f;
+    private float gravityValue = -6.81f;
 
     private void Start()
     {
@@ -43,7 +43,8 @@ public class movementController : MonoBehaviour
         }
 
         // Changes the height position of the player..
-        if (Input.GetButtonDown("Jump") && groundedPlayer)
+        //if (Input.GetButtonDown("Jump") && groundedPlayer)
+        if (Input.GetKey(KeyCode.Space) && groundedPlayer)
         {
             playerVelocity.y += Mathf.Sqrt(jumpHeight * -3.0f * gravityValue);
         }

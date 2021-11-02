@@ -16,7 +16,7 @@ public class alwayRunning : MonoBehaviour
     {
         #region Prevent Player from going out of Bounds
         Vector3 pos = Player.transform.position;
-        if (Player.transform.position.y < 1f)
+        if (Player.transform.position.y < .2f)
         {
             //Debug.Log("Adjusting height Position");
             Player.transform.position = new Vector3(Player.transform.position.x, 2.5f, Player.transform.position.z);
