@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Cinemachine;
 
 public class movementController : MonoBehaviour
 {
     GameObject Player;
     private CharacterController controller;
+    public CinemachineFreeLook camera;
     private Vector3 playerVelocity;
     private bool groundedPlayer;
     private float playerSpeed = .66f;
@@ -19,6 +21,7 @@ public class movementController : MonoBehaviour
         //controller = this.parent.gameobject.getComponent<CharacterController>();
         Player = GameObject.Find("Player");
         controller = gameObject.GetComponent<CharacterController>();
+        //camera = Player.GetComponent<CinemachineFreeLook>();
         //gameObject.AddComponent<CharacterController>();
     }
 
@@ -83,11 +86,28 @@ public class movementController : MonoBehaviour
         }
 
         //Mouse look left and right
-        if(Input.GetMouseButton(1))
-        {
+        //if(Input.GetMouseButton(1))
+        //{
             Vector3 rotation = new Vector3(0f, Input.GetAxis("Mouse X") * rotationSpeed * 10 * Time.deltaTime, 0f);
             Player.transform.Rotate(rotation);
             //Debug.Log(rotation.ToString());
-        }
+        //}
+            //if(Input.GetAxis("Mouse ScrollWheel") > 0)
+            //{
+            //    camera.m_YAxis.m_InputAxisValue += .10f;
+           // }
+           // else if(Input.GetAxis("Mouse ScrollWheel") < 0)
+           // {
+            //    camera.m_YAxis.mv.m_InputAxisValue -= .10f;
+            //}
+            //float tilt = Input.GetAxis("Mouse ScrollWheel") * (rotationSpeed / 300 ) *  Time.deltaTime;
+
+            //if (tilt != 0)
+            //{
+            //    Debug.Log(tilt.ToString());
+            //    camera.m_YAxis.m_InputAxisValue = tilt;
+            //    tilt = 0;
+            //}
+
     }
 }
